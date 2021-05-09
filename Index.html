@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<script>
+    
+    let userScore =0;
+    let machineScore=0;
+
+    function playRound(userSelection){
+
+        userSelection=prompt("Please write your selection (Rock, Paper or Scissors)","");
+        let options = ["rock", "paper", "scissors"];
+        let random = options[Math.floor(Math.random()*options.length)]
+        let machineSelection = random;
+        
+        if (machineSelection===userSelection.toLowerCase()){
+            return(userSelection.toLowerCase() + " vs " + machineSelection +" That was a tie, lets play again!");
+        }else if ((userSelection.toLowerCase()==="rock" && machineSelection==="scissors") || 
+        (userSelection.toLowerCase()==="paper" && machineSelection==="rock") ||
+        (userSelection.toLowerCase()==="scissors" && machineSelection==="paper")){
+            userScore++;
+            return (userSelection.toLowerCase() + " vs " + machineSelection +" OMG you win this time, next i'll beat you bitch");
+        }else if ((userSelection.toLowerCase()==="rock" && machineSelection==="paper") || 
+        (userSelection.toLowerCase()==="paper" && machineSelection==="scissors") ||
+        (userSelection.toLowerCase()==="scissors" && machineSelection==="rock")){
+            machineScore++;
+            return (userSelection.toLowerCase() + " vs " + machineSelection +" jejeje I won");
+        }else {
+            return("Only write rock paper or scissors please dumb ass!")
+        }
+    }
+
+    function resetGame (){
+        userScore=0;
+        machineScore=0;
+    }
+
+    function Result (){
+        
+        return ("Your score is " + userScore + " vs " + "My score " + machineScore);
+    }
+    
+
+</script>
+
+</head>
+
+
+
+
+</html>
